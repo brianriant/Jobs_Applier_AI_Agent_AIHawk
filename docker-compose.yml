@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  aihawk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Keep stdin open and allocate a TTY so the interactive CLI (inquirer prompts) works
+    stdin_open: true
+    tty: true
+    environment:
+      # Set to "true" to run Chrome in headless mode (required inside Docker)
+      - CHROME_HEADLESS=true
+    volumes:
+      # Mount the data folder so your config files and generated output are
+      # persisted on the host and do not need to be rebuilt into the image.
+      # Put your secrets.yaml, work_preferences.yaml and plain_text_resume.yaml
+      # inside ./data_folder before running.
+      - ./data_folder:/app/data_folder

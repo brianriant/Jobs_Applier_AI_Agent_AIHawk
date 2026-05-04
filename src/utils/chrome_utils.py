@@ -13,6 +13,9 @@ def chrome_browser_options():
     options.add_argument("--start-maximized")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    if os.environ.get("CHROME_HEADLESS", "").lower() == "true":
+        logger.debug("Running Chrome in headless mode")
+        options.add_argument("--headless=new")
     options.add_argument("--ignore-certificate-errors")
     options.add_argument("--disable-extensions")
     options.add_argument("--disable-gpu")  # Opzionale, utile in alcuni ambienti
