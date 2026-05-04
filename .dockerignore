@@ -11,7 +11,7 @@ venv/
 env/
 .env
 
-# Test artefacts
+# Test artifacts
 .pytest_cache/
 .coverage
 htmlcov/
@@ -22,10 +22,10 @@ htmlcov/
 .vscode/
 *.iml
 
-# OS artefacts
+# OS artifacts
 .DS_Store
 
-# Build / dist artefacts
+# Build / dist artifacts
 build/
 dist/
 *.egg-info/
